@@ -14,7 +14,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: PATAHAO_ADMIN_EMAIL
-        sync: false
+        value: ericisanya89@gmail.com
       - key: PATAHAO_ADMIN_NAME
         value: RM
       - key: PATAHAO_ADMIN_PASSWORD
