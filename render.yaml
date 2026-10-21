@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: patahao
+    runtime: node
+    plan: starter
+    buildCommand: npm run check
+    startCommand: node server.mjs
+    healthCheckPath: /api/health
+    disk:
+      name: patahao-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PATAHAO_ADMIN_EMAIL
+        sync: false
+      - key: PATAHAO_ADMIN_NAME
+        value: RM
+      - key: PATAHAO_ADMIN_PASSWORD
+        sync: false
+      - key: PATAHAO_DATA_DIR
+        value: /var/data
+      - key: PATAHAO_UPLOAD_DIR
+        value: /var/data/uploads
+      - key: PATAHAO_SEED_DEMO_LISTINGS
+        value: "false"
